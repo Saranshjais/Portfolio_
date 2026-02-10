@@ -1,71 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Zomato Recommendation System</title>
+<meta charset="UTF-8">
+<title>Zomato Recommendation System</title>
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
 
-    <!-- Main Bootstrap / Start Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
+<style>
+/* 🌈 Background */
+.project-bg {
+    background: radial-gradient(circle at top,
+        #e23744, #1c1c1c);
+    min-height: 100vh;
+    padding: 4rem 0;
+}
+
+/* 🧊 Glass Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 22px;
+    padding: 3rem;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    color: #fff;
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✨ Title */
+.project-card h1 {
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff5f6d, #e23744);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🎯 Badges */
+.badge {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* 🖼️ Hero Image */
+.hero-img {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+}
+
+.hero-img img {
+    transition: transform 0.6s ease;
+}
+
+.hero-img:hover img {
+    transform: scale(1.05);
+}
+
+/* 🌟 Glow */
+.hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        rgba(255,95,109,0.25),
+        rgba(226,55,68,0.25));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero-img:hover::after {
+    opacity: 1;
+}
+
+/* 📊 Info Cards */
+.info-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 1.8rem;
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.22);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.info-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 🧠 Feature Chips */
+.kpi {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    background: rgba(226,55,68,0.15);
+    margin: 0.4rem 0.4rem 0 0;
+    font-size: 0.85rem;
+    border: 1px solid rgba(226,55,68,0.4);
+}
+
+/* 🔘 Buttons */
+.btn-glow {
+    background: linear-gradient(90deg, #ff5f6d, #e23744);
+    color: #000;
+    border-radius: 30px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 10px 30px rgba(226,55,68,0.5);
+}
+
+.btn-glow:hover {
+    box-shadow: 0 15px 40px rgba(255,95,109,0.7);
+}
+
+.section-title {
+    margin-top: 4rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff5f6d, #e23744);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 4px;
+}
+</style>
 </head>
 
-<body class="project-bg bg-zomato">
+<body class="project-bg">
 
-    <section class="container">
-        <div class="project-card">
+<section class="container">
+<div class="project-card">
 
-            <h1 class="mb-2">Zomato Recommendation System</h1>
+    <!-- HEADER -->
+    <h1>Zomato Recommendation System</h1>
+    <p class="text-light mt-2">
+        Machine learning–based restaurant recommendation engine
+    </p>
 
-            <span class="badge bg-success me-2">Machine Learning</span>
-            <span class="badge bg-primary">Recommendation System</span>
+    <!-- TECH STACK -->
+    <div class="mb-4">
+        <span class="badge bg-dark">Python</span>
+        <span class="badge bg-dark">Machine Learning</span>
+        <span class="badge bg-dark">Recommendation System</span>
+        <span class="badge bg-dark">Scikit-learn</span>
+    </div>
 
-            <img src="../assets/img/portfolio/fullsize/zomato.png"
-                 class="img-fluid rounded my-4"
-                 alt="Zomato Recommendation System">
+    <!-- HERO -->
+    <div class="hero-img my-4">
+        <img src="../assets/img/portfolio/fullsize/zomato.png"
+             class="img-fluid"
+             alt="Zomato Recommendation System">
+    </div>
+        <!-- ACTION BUTTONS -->
+    <a href="https://github.com/Saranshjais/-Zomato-Sentiment-Analysis"
+       target="_blank"
+       class="btn btn-glow me-3">
+        GitHub →
+    </a>
 
-            <h3>Project Overview</h3>
-            <p>
-                This project implements a restaurant recommendation system that suggests
-                relevant dining options to users based on their preferences, ratings,
-                and similarity between restaurants.
-            </p>
-
-            <h3>Problem Statement</h3>
-            <p>
-                With thousands of restaurants available, users often struggle to find
-                places that match their taste. This system aims to simplify discovery
-                through personalized recommendations.
-            </p>
-
-            <h3>Approach</h3>
-            <ul>
-                <li>Exploratory data analysis on Zomato dataset</li>
-                <li>Feature engineering on cuisines, ratings, and location</li>
-                <li>Similarity calculation using cosine similarity</li>
-            </ul>
-
-            <h3>Tools & Technologies</h3>
-            <ul>
-                <li>Python</li>
-                <li>Pandas & NumPy</li>
-                <li>Scikit-learn</li>
-                <li>Cosine Similarity</li>
-            </ul>
-
-            <h3>Outcome</h3>
-            <p>
-                The model provides accurate and relevant restaurant suggestions,
-                improving user experience and decision-making.
-            </p>
-
-            <a href="../index.html#portfolio" class="btn btn-dark mt-4">
-                ← Back to Projects
-            </a>
-
+    <!-- PROBLEM / SOLUTION / IMPACT -->
+    <div class="row g-4 mt-5">
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">🍽️</div>
+                <h5>Problem</h5>
+                <p>
+                    Users struggle to find suitable restaurants due to the large
+                    number of choices and lack of personalized recommendations.
+                </p>
+            </div>
         </div>
-    </section>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">🧠</div>
+                <h5>Solution</h5>
+                <p>
+                    Built a content-based recommendation system using restaurant
+                    features such as cuisine, ratings, and location similarity.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">📈</div>
+                <h5>Impact</h5>
+                <p>
+                    Delivers relevant restaurant suggestions that improve user
+                    experience and decision-making efficiency.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <h3 class="section-title">Key Features</h3>
+    <div class="mt-3">
+        <span class="kpi">Content-Based Filtering</span>
+        <span class="kpi">Cosine Similarity</span>
+        <span class="kpi">Cuisine & Rating Analysis</span>
+        <span class="kpi">Personalized Recommendations</span>
+    </div>
+
+    <!-- OUTCOME -->
+    <h3 class="section-title">Outcome</h3>
+    <p>
+        The system successfully recommends restaurants based on similarity
+        patterns in the data, demonstrating effective application of machine
+        learning techniques for real-world recommendation systems.
+    </p>
+
+    <a href="../index.html#portfolio" class="btn btn-outline-light mt-4">
+        ← Back to Projects
+    </a>
+
+</div>
+</section>
 
 </body>
 </html>

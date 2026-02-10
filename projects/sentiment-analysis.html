@@ -1,65 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Social Media Sentiment Analysis | NLP</title>
+<meta charset="UTF-8">
+<title>Social Media Sentiment Analysis | NLP</title>
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
 
-    <!-- Main Bootstrap / Start Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
+<style>
+/* 🌈 Background */
+.project-bg {
+    background: radial-gradient(circle at top,
+        #8e2de2, #1c1c1c);
+    min-height: 100vh;
+    padding: 4rem 0;
+}
+
+/* 🧊 Glass Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 22px;
+    padding: 3rem;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    color: #fff;
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✨ Title */
+.project-card h1 {
+    font-weight: 800;
+    background: linear-gradient(90deg, #d76dff, #8e2de2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🎯 Badges */
+.badge {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* 🖼️ Hero Image */
+.hero-img {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+}
+
+.hero-img img {
+    transition: transform 0.6s ease;
+}
+
+.hero-img:hover img {
+    transform: scale(1.05);
+}
+
+/* 🌟 Glow */
+.hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        rgba(215,109,255,0.25),
+        rgba(142,45,226,0.25));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero-img:hover::after {
+    opacity: 1;
+}
+
+/* 📊 Info Cards */
+.info-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 1.8rem;
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.22);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.info-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 🧠 Feature Chips */
+.kpi {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    background: rgba(142,45,226,0.15);
+    margin: 0.4rem 0.4rem 0 0;
+    font-size: 0.85rem;
+    border: 1px solid rgba(142,45,226,0.4);
+}
+
+/* 🔘 Buttons */
+.btn-glow {
+    background: linear-gradient(90deg, #d76dff, #8e2de2);
+    color: #000;
+    border-radius: 30px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 10px 30px rgba(142,45,226,0.5);
+}
+
+.btn-glow:hover {
+    box-shadow: 0 15px 40px rgba(215,109,255,0.7);
+}
+
+.section-title {
+    margin-top: 4rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #d76dff, #8e2de2);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 4px;
+}
+</style>
 </head>
 
-<body class="project-bg bg-sentiment">
+<body class="project-bg">
 
-    <section class="container">
-        <div class="project-card">
+<section class="container">
+<div class="project-card">
 
-            <h1 class="mb-2">Social Media Sentiment Analysis</h1>
+    <!-- HEADER -->
+    <h1>Social Media Sentiment Analysis</h1>
+    <p class="text-light mt-2">
+        NLP-based sentiment classification using machine learning
+    </p>
 
-            <span class="badge bg-danger me-2">NLP</span>
-            <span class="badge bg-dark">Machine Learning</span>
+    <!-- TECH STACK -->
+    <div class="mb-4">
+        <span class="badge bg-dark">Python</span>
+        <span class="badge bg-dark">NLP</span>
+        <span class="badge bg-dark">Machine Learning</span>
+        <span class="badge bg-dark">Scikit-learn</span>
+    </div>
 
-            <img src="../assets/img/portfolio/fullsize/sentiment.png"
-                 class="img-fluid rounded my-4"
-                 alt="Social Media Sentiment Analysis">
+    <!-- HERO -->
+    <div class="hero-img my-4">
+        <img src="../assets/img/portfolio/fullsize/sentiment.png"
+             class="img-fluid"
+             alt="Social Media Sentiment Analysis">
+    </div>
 
-            <h3>Project Overview</h3>
-            <p>
-                This project focuses on analyzing social media text data to classify
-                user sentiment into <strong>Positive</strong>, <strong>Negative</strong>,
-                and <strong>Neutral</strong> categories using Natural Language Processing
-                techniques.
-            </p>
+    <!-- ACTION BUTTONS -->
+    <a href="https://github.com/Saranshjais/social-media-sentiment-analysis"
+       target="_blank"
+       class="btn btn-glow me-3">
+        GitHub →
+    </a>
 
-            <h3>Approach</h3>
-            <ul>
-                <li>Text cleaning and preprocessing</li>
-                <li>Feature extraction using TF-IDF</li>
-                <li>Model training and evaluation</li>
-            </ul>
-
-            <h3>Models & Tools</h3>
-            <ul>
-                <li>Python</li>
-                <li>NLTK</li>
-                <li>Scikit-learn</li>
-                <li>Logistic Regression & Naive Bayes</li>
-            </ul>
-
-            <h3>Results</h3>
-            <p>
-                Achieved approximately <strong>85% accuracy</strong> in sentiment
-                classification, enabling meaningful insights from social media data.
-            </p>
-
-            <a href="../index.html#portfolio" class="btn btn-dark mt-4">
-                ← Back to Projects
-            </a>
-
+    <!-- PROBLEM / SOLUTION / IMPACT -->
+    <div class="row g-4 mt-5">
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">💬</div>
+                <h5>Problem</h5>
+                <p>
+                    Large volumes of unstructured social media text make it
+                    difficult to understand public opinion manually.
+                </p>
+            </div>
         </div>
-    </section>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">🧠</div>
+                <h5>Solution</h5>
+                <p>
+                    Applied NLP preprocessing and machine learning models
+                    to classify text into positive, negative, or neutral sentiment.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">📈</div>
+                <h5>Impact</h5>
+                <p>
+                    Enables automated sentiment insights that can support
+                    brand monitoring and business decisions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <h3 class="section-title">Key Features</h3>
+    <div class="mt-3">
+        <span class="kpi">Text Cleaning</span>
+        <span class="kpi">TF-IDF Vectorization</span>
+        <span class="kpi">Sentiment Classification</span>
+        <span class="kpi">Model Evaluation</span>
+    </div>
+
+    <!-- OUTCOME -->
+    <h3 class="section-title">Outcome</h3>
+    <p>
+        Achieved approximately <strong>85% accuracy</strong> in sentiment classification,
+        demonstrating practical application of NLP and machine learning techniques.
+    </p>
+    <a href="../index.html#portfolio" class="btn btn-outline-light mt-4">
+        ← Back to Projects
+    </a>
+</div>
+</section>
 
 </body>
 </html>

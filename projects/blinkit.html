@@ -1,58 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Blinkit Power BI Dashboard</title>
+<meta charset="UTF-8">
+<title>Blinkit Power BI Dashboard</title>
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
 
-    <!-- Main Bootstrap / Start Bootstrap CSS -->
-    <!-- ⚠️ If your CSS is in assets/css, change the path accordingly -->
-    <link rel="stylesheet" href="../css/styles.css">
+<style>
+/* 🌈 Background */
+.project-bg {
+    background: radial-gradient(circle at top,
+        #1f4037, #0f2027);
+    min-height: 100vh;
+    padding: 4rem 0;
+}
+
+/* 🧊 Glass Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 22px;
+    padding: 3rem;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    color: #fff;
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✨ Title */
+.project-card h1 {
+    font-weight: 800;
+    background: linear-gradient(90deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🎯 Badges */
+.badge {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* 🖼️ Hero Image */
+.hero-img {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+}
+
+.hero-img img {
+    transition: transform 0.6s ease;
+}
+
+.hero-img:hover img {
+    transform: scale(1.05);
+}
+
+/* 🌟 Glow */
+.hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        rgba(0,255,135,0.25),
+        rgba(96,239,255,0.25));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero-img:hover::after {
+    opacity: 1;
+}
+
+/* 📊 Info Cards */
+.info-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 1.8rem;
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.22);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.info-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 🧠 KPI Chips */
+.kpi {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    background: rgba(0,255,135,0.15);
+    margin: 0.4rem 0.4rem 0 0;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0,255,135,0.4);
+}
+
+/* 🔘 Buttons */
+.btn-glow {
+    background: linear-gradient(90deg, #00ff87, #60efff);
+    color: #000;
+    border-radius: 30px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,255,135,0.5);
+}
+
+.btn-glow:hover {
+    box-shadow: 0 15px 40px rgba(96,239,255,0.7);
+}
+
+.section-title {
+    margin-top: 4rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #00ff87, #60efff);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 4px;
+}
+</style>
 </head>
 
-<body class="project-bg bg-blinkit">
+<body class="project-bg">
 
-    <section class="container">
-        <div class="project-card">
+<section class="container">
+<div class="project-card">
 
-            <h1 class="mb-2">Blinkit Power BI Dashboard</h1>
+    <!-- HEADER -->
+    <h1>Blinkit Power BI Dashboard</h1>
+    <p class="text-light mt-2">
+        Interactive Power BI dashboard for quick-commerce sales and outlet analysis
+    </p>
 
-            <span class="badge bg-primary me-2">Data Analytics</span>
-            <span class="badge bg-success">Power BI</span>
+    <div class="mb-4">
+        <span class="badge bg-dark">Power BI</span>
+        <span class="badge bg-dark">DAX</span>
+        <span class="badge bg-dark">Data Analytics</span>
+    </div>
 
-            <img src="../assets/img/portfolio/thumbnails/blinkit.png"
-                 class="img-fluid rounded my-4"
-                 alt="Blinkit Power BI Dashboard">
+    <!-- HERO -->
+    <div class="hero-img my-4">
+        <img src="../assets/img/portfolio/project images/Dashboard.png"
+             class="img-fluid"
+             alt="Blinkit Dashboard">
+    </div>
 
-            <h3>Overview</h3>
-            <p>
-                Built an interactive Power BI dashboard to analyze Blinkit’s sales
-                performance, customer demand, delivery efficiency, and revenue trends.
-            </p>
+    <a href="https://github.com/Saranshjais/blinkit-data-analysis-powerbi"
+       target="_blank"
+       class="btn btn-glow mt-3">
+        View Project on GitHub →
+    </a>
 
-            <h3>Tools & Technologies</h3>
-            <ul>
-                <li>Power BI</li>
-                <li>DAX</li>
-                <li>Excel</li>
-                <li>Data Cleaning & Modeling</li>
-            </ul>
-
-            <h3>Key Insights</h3>
-            <ul>
-                <li>Top-performing cities and products</li>
-                <li>Peak order hours and demand spikes</li>
-                <li>Category-wise revenue contribution</li>
-            </ul>
-
-            <a href="../index.html#portfolio" class="btn btn-dark mt-4">
-                ← Back to Projects
-            </a>
-
+    <!-- PROBLEM / SOLUTION / IMPACT -->
+    <div class="row g-4 mt-5">
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">📉</div>
+                <h5>Problem</h5>
+                <p>
+                    Raw sales data made it difficult to track performance,
+                    identify demand patterns, and compare outlet efficiency.
+                </p>
+            </div>
         </div>
-    </section>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">⚙️</div>
+                <h5>Solution</h5>
+                <p>
+                    Developed an interactive Power BI dashboard with KPIs,
+                    DAX measures, and slicers for dynamic analysis.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">🚀</div>
+                <h5>Impact</h5>
+                <p>
+                    Enabled faster insights into sales trends, top products,
+                    and outlet performance for data-driven decisions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <h3 class="section-title">Dashboard Highlights</h3>
+
+    <div class="mt-3">
+        <span class="kpi">Sales KPIs</span>
+        <span class="kpi">Outlet Performance</span>
+        <span class="kpi">Category Revenue</span>
+        <span class="kpi">Demand Trends</span>
+    </div>
+
+    <!-- OUTCOME -->
+    <h3 class="section-title">Outcome</h3>
+    <p>
+        The dashboard converts complex sales data into clear visual insights,
+        helping stakeholders monitor performance and optimize business strategy.
+    </p>
+    <a href="../index.html#portfolio" class="btn btn-outline-light mt-4">
+        ← Back to Projects
+    </a>
+</div>
+</section>
 
 </body>
 </html>

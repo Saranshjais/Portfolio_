@@ -1,66 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Airline Delay Analysis | Tableau</title>
+<meta charset="UTF-8">
+<title>Airline Delay Analysis | Tableau</title>
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
 
-    <!-- Main Bootstrap / Start Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
+<style>
+/* 🌈 Background */
+.project-bg {
+    background: radial-gradient(circle at top,
+        #2193b0, #1c1c1c);
+    min-height: 100vh;
+    padding: 4rem 0;
+}
+
+/* 🧊 Glass Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 22px;
+    padding: 3rem;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    color: #fff;
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✨ Title */
+.project-card h1 {
+    font-weight: 800;
+    background: linear-gradient(90deg, #6dd5ed, #2193b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🎯 Badges */
+.badge {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* 🖼️ Hero Image */
+.hero-img {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+}
+
+.hero-img img {
+    transition: transform 0.6s ease;
+}
+
+.hero-img:hover img {
+    transform: scale(1.05);
+}
+
+/* 🌟 Glow */
+.hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        rgba(109,213,237,0.25),
+        rgba(33,147,176,0.25));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero-img:hover::after {
+    opacity: 1;
+}
+
+/* 📊 Info Cards */
+.info-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 1.8rem;
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.22);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.info-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 🧠 Feature Chips */
+.kpi {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    background: rgba(33,147,176,0.15);
+    margin: 0.4rem 0.4rem 0 0;
+    font-size: 0.85rem;
+    border: 1px solid rgba(33,147,176,0.4);
+}
+
+/* 🔘 Buttons */
+.btn-glow {
+    background: linear-gradient(90deg, #6dd5ed, #2193b0);
+    color: #000;
+    border-radius: 30px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 10px 30px rgba(33,147,176,0.5);
+}
+
+.btn-glow:hover {
+    box-shadow: 0 15px 40px rgba(109,213,237,0.7);
+}
+
+.section-title {
+    margin-top: 4rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #6dd5ed, #2193b0);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-radius: 4px;
+}
+</style>
 </head>
 
-<body class="project-bg bg-airline">
+<body class="project-bg">
 
-    <section class="container">
-        <div class="project-card">
+<section class="container">
+<div class="project-card">
 
-            <h1 class="mb-2">Airline Delay Analysis</h1>
+    <!-- HEADER -->
+    <h1>Airline Delay Analysis</h1>
+    <p class="text-light mt-2">
+        Interactive analysis of flight delay patterns using Tableau
+    </p>
 
-            <span class="badge bg-info me-2">Data Visualization</span>
-            <span class="badge bg-warning text-dark">Tableau</span>
+    <!-- TECH STACK -->
+    <div class="mb-4">
+        <span class="badge bg-dark">Tableau</span>
+        <span class="badge bg-dark">Data Visualization</span>
+        <span class="badge bg-dark">Exploratory Analysis</span>
+        <span class="badge bg-dark">Excel</span>
+    </div>
 
-            <img src="../assets/img/portfolio/fullsize/airline.png"
-                 class="img-fluid rounded my-4"
-                 alt="Airline Delay Analysis Dashboard">
+    <!-- HERO -->
+    <div class="hero-img my-4">
+        <img src="../assets/img/portfolio/fullsize/airline.png"
+             class="img-fluid"
+             alt="Airline Delay Analysis Dashboard">
+    </div>
 
-            <h3>Project Overview</h3>
-            <p>
-                This project analyzes airline flight delay patterns across different
-                airlines, airports, and time periods to identify operational
-                inefficiencies and trends.
-            </p>
+    <!-- ACTION BUTTON -->
+    <a href="https://public.tableau.com/"
+       target="_blank"
+       class="btn btn-glow mt-3">
+        View Tableau Dashboard →
+    </a>
 
-            <h3>Key Objectives</h3>
-            <ul>
-                <li>Identify airlines with the highest delays</li>
-                <li>Analyze airport-wise delay performance</li>
-                <li>Study seasonal and time-based delay trends</li>
-            </ul>
-
-            <h3>Tools & Technologies</h3>
-            <ul>
-                <li>Tableau</li>
-                <li>Excel</li>
-                <li>Data Cleaning & Aggregation</li>
-                <li>Exploratory Data Analysis</li>
-            </ul>
-
-            <a href="https://public.tableau.com/"
-               target="_blank"
-               class="btn btn-primary mt-3">
-                View Tableau Dashboard
-            </a>
-
-            <br><br>
-
-            <a href="../index.html#portfolio" class="btn btn-dark">
-                ← Back to Projects
-            </a>
-
+    <!-- PROBLEM / SOLUTION / IMPACT -->
+    <div class="row g-4 mt-5">
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">✈️</div>
+                <h5>Problem</h5>
+                <p>
+                    Flight delays impact customer experience and operational
+                    efficiency, but raw data makes trend identification difficult.
+                </p>
+            </div>
         </div>
-    </section>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">📊</div>
+                <h5>Solution</h5>
+                <p>
+                    Built an interactive Tableau dashboard to analyze delays by
+                    airline, airport, and time period using visual analytics.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <div class="info-icon">📈</div>
+                <h5>Impact</h5>
+                <p>
+                    Enables stakeholders to identify delay-prone airlines and
+                    seasonal patterns for operational improvements.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <h3 class="section-title">Key Insights</h3>
+    <div class="mt-3">
+        <span class="kpi">Airline-Wise Delays</span>
+        <span class="kpi">Airport Performance</span>
+        <span class="kpi">Seasonal Trends</span>
+        <span class="kpi">Time-Based Analysis</span>
+    </div>
+
+    <!-- OUTCOME -->
+    <h3 class="section-title">Outcome</h3>
+    <p>
+        The dashboard converts complex flight delay data into clear insights,
+        supporting data-driven decisions to improve airline operations and
+        passenger experience.
+    </p>
+    <a href="../index.html#portfolio" class="btn btn-outline-light mt-4">
+        ← Back to Projects
+    </a>
+</div>
+</section>
 
 </body>
 </html>
