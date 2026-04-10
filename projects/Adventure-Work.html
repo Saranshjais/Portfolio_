@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AdventureWorks Sales Analysis | Power BI</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+<style>
+.project-bg {
+    background: radial-gradient(circle at top, #3a7bd5, #1c1c1c);
+    min-height: 100vh;
+    padding: 4rem 0;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    border-radius: 22px;
+    padding: 3rem;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    color: #fff;
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card h1 {
+    font-weight: 800;
+    background: linear-gradient(90deg, #56ccf2, #2f80ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.hero-img {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+}
+
+.hero-img img {
+    transition: transform 0.6s ease;
+}
+
+.hero-img:hover img {
+    transform: scale(1.05);
+}
+
+.info-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 1.8rem;
+    transition: 0.4s;
+    height: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.22);
+}
+
+.kpi {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    background: rgba(47,128,237,0.2);
+    margin: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.btn-glow {
+    background: linear-gradient(90deg, #56ccf2, #2f80ed);
+    color: #000;
+    border-radius: 30px;
+    padding: 0.7rem 1.8rem;
+    border: none;
+}
+
+.section-title {
+    margin-top: 4rem;
+    font-weight: 700;
+}
+</style>
+</head>
+
+<body class="project-bg">
+
+<section class="container">
+<div class="project-card">
+
+    <!-- HEADER -->
+    <h1>AdventureWorks Sales Analysis</h1>
+    <p class="text-light mt-2">
+        Business intelligence dashboard built using Power BI to analyze sales performance and trends
+    </p>
+
+    <!-- TECH STACK -->
+    <div class="mb-4">
+        <span class="badge bg-dark">Power BI</span>
+        <span class="badge bg-dark">SQL</span>
+        <span class="badge bg-dark">Data Modeling</span>
+        <span class="badge bg-dark">DAX</span>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="hero-img my-4">
+        <img src="../assets/img/portfolio/fullsize/adventureworks.png"
+             class="img-fluid"
+             alt="AdventureWorks Dashboard">
+    </div>
+
+    <!-- BUTTON -->
+    <a href="https://app.powerbi.com/"
+       target="_blank"
+       class="btn btn-glow mt-3">
+        View Power BI Dashboard →
+    </a>
+
+    <!-- PROBLEM / SOLUTION / IMPACT -->
+    <div class="row g-4 mt-5">
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h5>Problem</h5>
+                <p>
+                    Sales data across regions and products was scattered, making it difficult to identify performance trends and business opportunities.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h5>Solution</h5>
+                <p>
+                    Developed an interactive Power BI dashboard with dynamic filters, KPIs, and visualizations to track revenue, profit, and customer insights.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h5>Impact</h5>
+                <p>
+                    Enabled data-driven decision-making by highlighting top-performing products, regions, and seasonal sales patterns.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FEATURES -->
+    <h3 class="section-title">Key Insights</h3>
+    <div class="mt-3">
+        <span class="kpi">Sales by Region</span>
+        <span class="kpi">Product Performance</span>
+        <span class="kpi">Customer Segmentation</span>
+        <span class="kpi">Profit Analysis</span>
+        <span class="kpi">Time Series Trends</span>
+    </div>
+
+    <!-- OUTCOME -->
+    <h3 class="section-title">Outcome</h3>
+    <p>
+        This dashboard transforms raw sales data into actionable insights, helping businesses optimize strategies, improve profitability, and understand customer behavior.
+    </p>
+
+    <a href="../index.html#portfolio" class="btn btn-outline-light mt-4">
+        ← Back to Projects
+    </a>
+
+</div>
+</section>
+
+</body>
+</html>
