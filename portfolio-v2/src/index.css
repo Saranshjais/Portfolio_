@@ -1,0 +1,103 @@
+:root {
+  /* Elegant Dark Theme */
+  --bg-color: #050505;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  
+  /* Fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  /* Glass */
+  --glass-bg: rgba(10, 10, 10, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+  /* Allow standard cursor */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 3D Canvas Background */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+/* UI Overlay */
+.ui-layer {
+  position: relative;
+  z-index: 10;
+  pointer-events: none; /* Let clicks pass through to 3D canvas where there's no UI */
+}
+
+/* Re-enable pointer events for actual content */
+.ui-layer section, .ui-layer nav {
+  pointer-events: auto;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  padding: 10vh 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+}
+
+/* Typography */
+h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff, #888888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
