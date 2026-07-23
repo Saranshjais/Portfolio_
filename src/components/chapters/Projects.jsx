@@ -42,10 +42,12 @@ export default function Projects({ id }) {
   ];
 
   return (
-    <section id={id} style={{ alignItems: 'flex-end', paddingBottom: '20vh' }}>
+    <section id={id} className="projects-section">
       <div style={{ maxWidth: '800px', width: '100%' }}>
-        <div className="mono" style={{ color: 'var(--text-secondary)', marginBottom: '1rem', textAlign: 'right' }}>[02] SELECTED WORKS</div>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'right' }}>Impact Through Data</h2>
+        <div className="projects-header-container">
+          <div className="mono" style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>[02] SELECTED WORKS</div>
+          <h2 style={{ fontSize: '2.5rem' }}>Impact Through Data</h2>
+        </div>
         
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
           {projects.map((proj, i) => {
@@ -98,7 +100,7 @@ export default function Projects({ id }) {
                     cursor: 'pointer'
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                  <div className="project-header">
                     <motion.h3 
                       animate={{ 
                         x: isHovered ? -20 : 0, 
@@ -123,11 +125,11 @@ export default function Projects({ id }) {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         style={{ overflow: 'hidden' }}
                       >
-                        <div style={{ paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                        <div className="project-details">
                           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '60%', margin: 0 }}>
                             {proj.desc}
                           </p>
-                          <div style={{ display: 'flex', gap: '0.75rem' }}>
+                          <div className="project-tech">
                             {proj.tech.map(t => (
                               <span key={t} className="mono" style={{ fontSize: '0.7rem', color: '#00f0ff', border: '1px solid rgba(0, 240, 255, 0.3)', padding: '4px 10px', borderRadius: '30px' }}>
                                 {t}

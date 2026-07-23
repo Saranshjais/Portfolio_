@@ -101,3 +101,126 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Responsive adjustments */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  z-index: 50;
+  transition: padding 0.3s ease;
+}
+
+.hero-section {
+  align-items: center;
+  text-align: center;
+  padding: 0 5vw;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.about-section {
+  align-items: flex-start;
+  padding: 15vh 10vw;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 3rem;
+}
+
+.projects-section {
+  align-items: flex-end;
+  padding-bottom: 20vh;
+}
+
+.projects-header-container {
+  text-align: right;
+  margin-bottom: 4rem;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.project-details {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.project-tech {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+  h2 { font-size: clamp(1.8rem, 6vw, 3rem); }
+  section { padding: 12vh 5vw; }
+
+  .top-nav { padding: 1.25rem 5vw; }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons a {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .about-section { padding: 10vh 5vw; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .about-text {
+    font-size: 1.1rem !important;
+  }
+  
+  .projects-section {
+    padding: 10vh 5vw;
+    align-items: flex-start;
+  }
+  .projects-header-container {
+    text-align: left;
+    margin-bottom: 2.5rem;
+  }
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  .project-header h3 {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+  .project-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .project-details p {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+  }
+}
+

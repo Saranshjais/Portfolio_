@@ -23,7 +23,7 @@ function App() {
       <div className="ui-layer">
         
         {/* Floating Nav/Logo */}
-        <nav style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '2rem 5vw', display: 'flex', justifyContent: 'space-between', zIndex: 50 }}>
+        <nav className="top-nav">
           <div className="mono" style={{ fontSize: '1rem', letterSpacing: '2px' }}>SJ.</div>
           <div className="mono" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>AI/ML Engineer</div>
         </nav>

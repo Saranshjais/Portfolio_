@@ -4,12 +4,8 @@ export default function Hero({ id, scrollOpacity }) {
   return (
     <motion.section 
       id={id} 
-      style={{ 
-        opacity: scrollOpacity, 
-        alignItems: 'center', 
-        textAlign: 'center',
-        padding: '0 5vw'
-      }}
+      className="hero-section"
+      style={{ opacity: scrollOpacity }}
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -26,7 +22,7 @@ export default function Hero({ id, scrollOpacity }) {
           Scroll to explore the neural core.
         </p>
         
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+        <div className="hero-buttons">
           <a 
             href="#about" 
             onClick={() => window.dispatchEvent(new Event('start-audio'))}

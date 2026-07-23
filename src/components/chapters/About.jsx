@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function About({ id }) {
   return (
-    <section id={id} style={{ alignItems: 'flex-start', padding: '15vh 10vw' }}>
+    <section id={id} className="about-section">
       <motion.div 
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -15,14 +15,14 @@ export default function About({ id }) {
           Decoding Complexity.
         </h2>
         
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '1.25rem', lineHeight: '1.8', fontWeight: 300 }}>
+        <p className="about-text" style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '1.25rem', lineHeight: '1.8', fontWeight: 300 }}>
           My journey began with a simple curiosity about how data shapes the world around us. As a Data Science graduate, I quickly learned that numbers without context are just noise.
         </p>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '4rem', fontSize: '1.25rem', lineHeight: '1.8', fontWeight: 300 }}>
+        <p className="about-text" style={{ color: 'var(--text-secondary)', marginBottom: '4rem', fontSize: '1.25rem', lineHeight: '1.8', fontWeight: 300 }}>
           Today, my focus is on transforming that chaotic raw data into clear, strategic narratives. From exploratory data analysis and feature engineering to training predictive models and crafting interactive dashboards, I handle the entire lifecycle.
         </p>
         
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '3rem' }}>
+        <div className="about-grid">
           <div>
             <div className="mono" style={{ fontSize: '0.8rem', color: '#fff', marginBottom: '1rem', letterSpacing: '1px' }}>CORE SKILLS</div>
             <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>Machine Learning, Data Visualization, NLP, Predictive Modeling</p>

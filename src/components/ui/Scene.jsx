@@ -11,13 +11,17 @@ function CameraRig() {
   
   useFrame((state) => {
     // Advanced Camera Flight:
-    // We use the scroll position (which we can read from the body/window) to drive the camera Z position
     const scrollY = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     const scrollProgress = maxScroll > 0 ? scrollY / maxScroll : 0;
     
-    // As we scroll down, we fly towards the core, but not INSIDE it (limit to Z=3)
-    const targetZ = 8 - (scrollProgress * 5);  
+    // Pull camera back on smaller screens to keep the sphere fully in view
+    const isMobile = state.size.width < 768;
+    const baseZ = isMobile ? 16 : 8;
+    const zoomAmount = isMobile ? 10 : 5;
+    
+    // As we scroll down, we fly towards the core
+    const targetZ = baseZ - (scrollProgress * zoomAmount);  
     
     // Subtle mouse parallax
     const targetX = (pointer.x * Math.PI) / 2;
